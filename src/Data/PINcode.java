@@ -23,6 +23,7 @@ final public class PINcode {
         if (o == null || getClass() != o.getClass()) return false;
         PINcode piNcode = (PINcode) o;
         return piNcode.equals(piNcode.codePin);
+
     }
 
 
