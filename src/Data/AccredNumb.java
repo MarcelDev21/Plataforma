@@ -19,4 +19,5 @@ final public class AccredNumb {
         AccredNumb accreditNumber = (AccredNumb) o;
         return accreditNumber.equals(accreditNumber.numAccred);
     }
+
 }

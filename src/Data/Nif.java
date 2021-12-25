@@ -36,4 +36,5 @@ final public class Nif {
         Matcher matcher = pattern.matcher(myNif);
         return matcher.matches();
     }
+
 }

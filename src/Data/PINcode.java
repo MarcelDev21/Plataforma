@@ -7,13 +7,16 @@ import java.util.regex.Pattern;
 
 final public class PINcode {
 
-    private final int codePin;
+    private final String codePin;
 
-    public PINcode(int codePin) throws PinException {
+    public PINcode(String codePin) throws PinException {
+        if(codePin == null || !checkFormato(codePin)){
+            throw new PinException("este pin tiene problema");
+        }
         this.codePin = codePin;
     }
 
-    public int getCodePin() {
+    public String getCodePin() {
         return codePin;
     }
 
@@ -26,5 +29,10 @@ final public class PINcode {
 
     }
 
+    private boolean checkFormato(String myNif){
+        Pattern pattern = Pattern.compile("BBBBBBBB[A-Z]{2}[0-9]{18}");
+        Matcher matcher = pattern.matcher(myNif);
+        return matcher.matches();
+    }
 
 }
